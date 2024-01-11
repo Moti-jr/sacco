@@ -1,0 +1,67 @@
+{% extends 'layouts/base_template.html' %}
+
+<div class="col-lg-11 mx-auto mt-1 px-3">
+    <form action="" method="post">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group mb-2">
+                    <label for="">Customer Name</label>
+                    <input type="text" name="cname" id="" class="form-control" placeholder=""
+                           aria-describedby="helpId">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group mb-2">
+                    <label for="">Customer Username</label>
+                    <input type="text" name="uname" id="" class="form-control" placeholder=""
+                           aria-describedby="helpId">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group mb-2">
+                    <label for="">Email </label>
+                    <input type="email" name="email" id="" class="form-control" placeholder="abc@gmail"
+                           aria-describedby="helpId">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group mb-2">
+                    <label for="">Address</label>
+                    <input type="text" name="address" id="" class="form-control" placeholder=""
+                           aria-describedby="helpId">
+                </div>
+            </div>
+        </div>
+        <div class="form-group mb-2">
+            <label for="">Phone Number</label>
+            <input type="text" name="number" id="" class="form-control" placeholder="username" required
+                   aria-describedby="helpId">
+        </div>
+        <div class="form-group mb-2">
+            <label for="">Password</label>
+            <input type="password" name="pass" id="" class="form-control" placeholder="password"
+                   required aria-describedby="helpId">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+
+        <p class="login_text mb-2">
+            If you already have an account
+            <a href="{% url 'login' %} "><span style="color: blue;text-decoration:underline;cursor:pointer">
+									click here</span></a>
+        </p>
+    </form>
+</div>
+{% load crispy_forms_filters %}
+<form action="" method="post">
+
+    {{ csrf }}
+    {{ form|crispy}}
+</form>
+
+{% block title %}
+    register
+{% endblock %}

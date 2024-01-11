@@ -1,0 +1,24 @@
+{% extends 'layouts/base_template.html' %}
+{% load crispy_forms_filters %}
+{% block title %}
+    login
+{% endblock %}
+
+{% block content %}
+
+    <div class="vh-100 d-flex align-items-center justify-content-center bg-info-light">
+
+        <div class="row justify-content-center w-100">
+
+            <div class="col-sm-5 bg-secondary-light">
+
+                <form action="{% url 'login' %}" method="POST" class="shadow px-sm-5 ">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <button type="submit" class="btn btn-success rounded-1 w-80 justify-content-center">login</button>
+                    <p>Don't have account? <a href="{% url 'signup' %}">signup</a> </p>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

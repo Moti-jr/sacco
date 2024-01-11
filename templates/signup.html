@@ -1,0 +1,69 @@
+{% extends 'layouts/base_template.html' %}
+{% load crispy_forms_filters %}
+{% block title %}
+	register
+{% endblock %}
+{% block content %}
+
+{% csrf_token %}
+    <div class="col-lg-8 mx-auto mt-1 px-3">
+    <form action="" method="post">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="form-group mb-2">
+                    <label for="">username</label>
+                    <input type="text" name="cname" id="" class="form-control" placeholder=""
+                           aria-describedby="helpId">
+                </div>
+            </div>
+             <div class="col-lg-5">
+                <div class="form-group mb-2">
+                    <label for="">First Name</label>
+                    <input type="text" name="cname" id="" class="form-control" placeholder=""
+                           aria-describedby="helpId">
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="form-group mb-2">
+                    <label for="">last name</label>
+                    <input type="text" name="uname" id="" class="form-control" placeholder=""
+                           aria-describedby="helpId">
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-lg-5">
+                <div class="form-group mb-2">
+                    <label for="">Email </label>
+                    <input type="email" name="email" id="" class="form-control" placeholder="abc@gmail"
+                           aria-describedby="helpId">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group mb-2">
+            <label for="">Password</label>
+            <input type="password" name="pass" id="" class="form-control" placeholder="password"
+                   required aria-describedby="helpId">
+        </div>
+             <div class="form-group mb-2">
+            <label for="">Confirm Password</label>
+            <input type="password" name="pass" id="" class="form-control" placeholder="password"
+                   required aria-describedby="helpId">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+
+        <p class="login_text mb-2">
+            If you already have an account
+            <a href="{% url 'login' %} "><span style="color: blue;text-decoration:underline;cursor:pointer">
+									click here</span></a>
+        </p>
+        </div>
+
+    </form>
+</div>
+
+<button >submit</button>
+{% endblock %}
